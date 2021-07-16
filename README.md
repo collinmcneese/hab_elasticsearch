@@ -1,11 +1,13 @@
 # hab_elasticsearch
 
 Published as package `collinmcneese/elasticsearch`
+
 Habitat service package used to install/run Elasticsearch [https://www.elastic.co/]
 
 ## Maintainers
 
-Collin McNeese <cmcnese@chef.io>
+* Collin McNeese <cmcnese@chef.io>
+* Based on Chef Habitat core-plans [https://github.com/habitat-sh/core-plans/tree/master/elasticsearch]
 
 <!--
 ## Usage
