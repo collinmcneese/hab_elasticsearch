@@ -24,6 +24,7 @@ jobs:
         HAB_ORIGIN: collinmcneese
     - name: Run Tests
       run: |
+        sudo hab license accept
         sudo hab sup run &
         while [ ! hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 2 ; done
         source results/last_build.env
