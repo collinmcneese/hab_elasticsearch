@@ -1,0 +1,36 @@
+name: hab_elasticsearch CI
+
+on:
+  push:
+    # branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out Code
+      uses: actions/checkout@v2
+    - name: install chef-workstation
+      uses: actionshub/chef-install@main
+    - name: Build and Install
+      run: |
+        hab origin key generate
+        hab pkg build .
+        if [ ! -f results/last_build.env ] ; then echo "build failed!" ; exit 1 ; fi
+      env:
+        HAB_LICENSE: accept-no-persist
+        HAB_ORIGIN: collinmcneese
+    - name: Run Tests
+      run: |
+        hab sup run &
+        while [ ! hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 2 ; done
+        source results/last_build.env
+        hab pkg install results/${pkg_artifact}
+        hab svc load ${pkg_ident}
+        inspec exec tests
+      env:
+        HAB_LICENSE: accept-no-persist
+        CHEF_LICENSE: accept-no-persist
+
