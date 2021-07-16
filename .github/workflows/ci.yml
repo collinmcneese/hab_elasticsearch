@@ -16,6 +16,7 @@ jobs:
       uses: actionshub/chef-install@main
     - name: Build and Install
       run: |
+        sudo useradd hab
         hab origin key generate
         hab pkg build .
         if [ ! -f results/last_build.env ] ; then echo "build failed!" ; exit 1 ; fi
