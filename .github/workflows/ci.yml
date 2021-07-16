@@ -25,6 +25,7 @@ jobs:
     - name: Run Tests
       run: |
         sudo hab license accept
+        sudo cp -f ~/.hab/cache/keys/* /hab/cache/keys/
         sudo hab sup run &
         while [ ! hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 2 ; done
         source results/last_build.env
