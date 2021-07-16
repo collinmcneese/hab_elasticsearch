@@ -32,6 +32,7 @@ jobs:
         source results/last_build.env
         sudo hab pkg install results/${pkg_artifact}
         sudo hab svc load ${pkg_ident}
+        x=1; while [ $x -le 5 ]; do curl -sq http://localhost:9200 || echo "waiting for service to load" && sleep 10 ; x=$(( $x + 1 )) ; done
         inspec exec tests
       env:
         HAB_LICENSE: accept-no-persist
