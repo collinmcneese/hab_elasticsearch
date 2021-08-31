@@ -2,7 +2,7 @@ pkg_name=elasticsearch
 pkg_origin=collinmcneese
 pkg_version=6.8.17
 pkg_maintainer="Collin McNeese <cmcneese@chef.io>"
-pkg_description="Elasticsearch - Open Source, Distributed, RESTful Search Engine"
+pkg_description="Elasticsearch - Open Source, Distributed, RESTful Search Engine.  Based on upstream core/elasticsearch package."
 pkg_upstream_url="https://elastic.co"
 pkg_license=('Apache-2.0')
 pkg_source="https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
@@ -15,7 +15,7 @@ pkg_deps=(
   core/busybox-static
   core/glibc
   core/zlib
-  core/openjdk11
+  collinmcneese/openjdk11
   core/wget
 )
 pkg_bin_dirs=(es/bin)
