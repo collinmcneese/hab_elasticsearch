@@ -1,0 +1,14 @@
+#!/bin/bash
+
+exec 2>&1
+
+# Populate default user.toml if it does not exist
+user_cfg_path='/hab/user/elasticsearch/config'
+
+if [ ! -d ${user_cfg_path} ]; then
+  mkdir -p ${user_cfg_path}
+fi
+
+if [ -f ${user_cfg_path}/user.toml ]; then
+  cp {{pkg.path}}/default.toml ${user_cfg_path}/user.toml
+fi

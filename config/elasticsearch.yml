@@ -69,3 +69,18 @@ action.destructive_requires_name: {{cfg.action.destructive_requires_name}}
 {{#if cfg.plugins.cloud_aws_signer ~}}
 cloud.aws.signer: {{cfg.plugins.cloud_aws_signer}}
 {{/if ~}}
+
+{{#if cfg.security.http.ssl ~}}
+xpack.security.http.ssl.enabled: {{cfg.security.http.ssl.enabled}}
+xpack.security.http.ssl.key:  {{cfg.security.http.ssl.key}}
+xpack.security.http.ssl.certificate: {{cfg.security.http.ssl.certificate}}
+xpack.security.http.ssl.certificate_authorities: {{cfg.security.http.ssl.certificate_authorities}}
+{{/if ~}}
+
+{{#if xpack.security.transport.ssl ~}}
+xpack.security.transport.ssl.enabled: {{xpack.security.transport.ssl.enabled}}
+xpack.security.transport.ssl.verification_mode: {{xpack.security.transport.ssl.verification_mode}}}}
+xpack.security.transport.ssl.key: {{xpack.security.transport.ssl.key}}
+xpack.security.transport.ssl.certificate: {{xpack.security.transport.ssl.certificate}}
+xpack.security.transport.ssl.certificate_authorities: {{xpack.security.transport.ssl.certificate_authorities}}
+{{/if ~}}
