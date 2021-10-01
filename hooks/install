@@ -9,6 +9,6 @@ if [ ! -d ${user_cfg_path} ]; then
   mkdir -p ${user_cfg_path}
 fi
 
-if [ -f ${user_cfg_path}/user.toml ]; then
+if [ ! -f ${user_cfg_path}/user.toml ]; then
   cp {{pkg.path}}/default.toml ${user_cfg_path}/user.toml
 fi
