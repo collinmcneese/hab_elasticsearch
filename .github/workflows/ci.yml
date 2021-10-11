@@ -30,6 +30,7 @@ jobs:
         sudo hab sup run &
         while [ ! hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 2 ; done
         source results/last_build.env
+        sudo chown -R hab:hab /hab
         sudo hab pkg install results/${pkg_artifact}
         sudo hab svc load ${pkg_ident}
         x=1; while [ $x -le 5 ]; do curl -sq http://localhost:9200 || echo "waiting for service to load" && sleep 10 ; x=$(( $x + 1 )) ; done

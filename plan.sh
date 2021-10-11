@@ -8,8 +8,6 @@ pkg_license=('Apache-2.0')
 pkg_source="https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum=67f86019deffbc54aa64f806579aec434667596857918ca71addf12d3b246576
 
-pkg_svc_user="root"
-
 pkg_build_deps=(
   core/patchelf
 )
