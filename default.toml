@@ -240,7 +240,7 @@
 # certificate = '/path/to/ssl.crt'
 # certificate_authorities = '/path/to/cacert.crt'
 
-[xpack.security.transport.ssl]
+# [xpack.security.transport.ssl]
 # enabled = true
 # key = '/path/to/ssl.key'
 # certificate = '/path/to/ssl.crt'

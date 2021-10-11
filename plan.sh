@@ -1,12 +1,15 @@
 pkg_name=elasticsearch
 pkg_origin=collinmcneese
-pkg_version=6.8.17
+pkg_version=6.8.19
 pkg_maintainer="Collin McNeese <cmcneese@chef.io>"
 pkg_description="Elasticsearch - Open Source, Distributed, RESTful Search Engine.  Based on upstream core/elasticsearch package."
 pkg_upstream_url="https://elastic.co"
 pkg_license=('Apache-2.0')
 pkg_source="https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
-pkg_shasum=b0665e19edd30bbf9f59f431be629115d98f412e4872b2a26c105de7058caceb
+pkg_shasum=67f86019deffbc54aa64f806579aec434667596857918ca71addf12d3b246576
+
+pkg_svc_user="root"
+
 pkg_build_deps=(
   core/patchelf
 )
