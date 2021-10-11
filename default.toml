@@ -232,3 +232,17 @@
   es_startup_sleep_time = ""
   es_java_opts = ""
   heapsize = "1g"
+
+# ======================== Security Configuration =========================
+# [xpack.security.http.ssl]
+# enabled = true
+# key = '/path/to/ssl.key'
+# certificate = '/path/to/ssl.crt'
+# certificate_authorities = '/path/to/cacert.crt'
+
+# [xpack.security.transport.ssl]
+# enabled = true
+# key = '/path/to/ssl.key'
+# certificate = '/path/to/ssl.crt'
+# certificate_authorities = '/path/to/cacert.crt'
+# verification_mode = ''

@@ -1,0 +1,25 @@
+---
+driver:
+  name: docker
+  privileged: true
+  remove_images: false
+  env_variables:
+    CHEF_LICENSE: accept
+    HAB_LICENSE: accept
+  mount: type=bind,source="$(pwd)",target=/kitchen
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: almalinux
+    lifecycle:
+      pre_create:
+        # Fetch chef-workstation from the host side, prevent re-downloading
+        - local: |
+            if ! ls ".kitchen/chef-workstation"* 1> /dev/null 2>&1 ; then
+              curl -s https://omnitruck.chef.io/stable/chef-workstation/metadata?v=&p=el&pv=8&m=x86_64 | grep '^url' | awk -F ' ' '{print $2}' | xargs -I {} wget -P .kitchen {} ;
+            fi
+
+suites:
+  - name: default

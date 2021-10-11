@@ -28,6 +28,9 @@ node.data: {{cfg.node.data}}
 
 path.logs: {{pkg.svc_var_path}}/{{cfg.path.logs}}
 path.data: {{pkg.svc_data_path}}/{{cfg.path.data}}
+{{#if cfg.path.repo ~}}
+path.repo: {{cfg.path.repo}}
+{{/if ~}}
 
 indices.recovery.max_bytes_per_sec: {{cfg.indices.recovery.max_bytes_per_sec}}
 
@@ -68,4 +71,19 @@ action.destructive_requires_name: {{cfg.action.destructive_requires_name}}
 
 {{#if cfg.plugins.cloud_aws_signer ~}}
 cloud.aws.signer: {{cfg.plugins.cloud_aws_signer}}
+{{/if ~}}
+
+{{#if cfg.xpack.security.http.ssl ~}}
+xpack.security.http.ssl.enabled: {{cfg.xpack.security.http.ssl.enabled}}
+xpack.security.http.ssl.key:  {{cfg.xpack.security.http.ssl.key}}
+xpack.security.http.ssl.certificate: {{cfg.xpack.security.http.ssl.certificate}}
+xpack.security.http.ssl.certificate_authorities: {{cfg.xpack.security.http.ssl.certificate_authorities}}
+{{/if ~}}
+
+{{#if cfg.xpack.security.transport.ssl ~}}
+xpack.security.transport.ssl.enabled: {{cfg.xpack.security.transport.ssl.enabled}}
+xpack.security.transport.ssl.verification_mode: {{cfg.xpack.security.transport.ssl.verification_mode}}
+xpack.security.transport.ssl.key: {{cfg.xpack.security.transport.ssl.key}}
+xpack.security.transport.ssl.certificate: {{cfg.xpack.security.transport.ssl.certificate}}
+xpack.security.transport.ssl.certificate_authorities: {{cfg.xpack.security.transport.ssl.certificate_authorities}}
 {{/if ~}}
