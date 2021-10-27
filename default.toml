@@ -234,6 +234,9 @@
   heapsize = "1g"
 
 # ======================== Security Configuration =========================
+[xpack.security]
+  enabled = "false"
+
 # [xpack.security.http.ssl]
 # enabled = true
 # key = '/path/to/ssl.key'
@@ -246,3 +249,11 @@
 # certificate = '/path/to/ssl.crt'
 # certificate_authorities = '/path/to/cacert.crt'
 # verification_mode = ''
+
+# [xpack.security.transport.filter]
+# allow = "[0.0.0.0/0]"
+# deny = "_all"
+
+# [xpack.security.http.filter]
+# allow = "[0.0.0.0/0]"
+# deny = "_all"

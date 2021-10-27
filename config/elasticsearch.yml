@@ -73,6 +73,8 @@ action.destructive_requires_name: {{cfg.action.destructive_requires_name}}
 cloud.aws.signer: {{cfg.plugins.cloud_aws_signer}}
 {{/if ~}}
 
+xpack.security.enabled: {{cfg.xpack.security.enabled}}
+
 {{#if cfg.xpack.security.http.ssl ~}}
 xpack.security.http.ssl.enabled: {{cfg.xpack.security.http.ssl.enabled}}
 xpack.security.http.ssl.key:  {{cfg.xpack.security.http.ssl.key}}
@@ -86,4 +88,14 @@ xpack.security.transport.ssl.verification_mode: {{cfg.xpack.security.transport.s
 xpack.security.transport.ssl.key: {{cfg.xpack.security.transport.ssl.key}}
 xpack.security.transport.ssl.certificate: {{cfg.xpack.security.transport.ssl.certificate}}
 xpack.security.transport.ssl.certificate_authorities: {{cfg.xpack.security.transport.ssl.certificate_authorities}}
+{{/if ~}}
+
+{{#if cfg.xpack.security.http.filter ~}}
+xpack.security.transport.filter.allow: {{cfg.xpack.security.transport.filter.allow}}
+xpack.security.transport.filter.deny: {{cfg.xpack.security.transport.filter.deny}}
+{{/if ~}}
+
+{{#if cfg.xpack.security.http.filter ~}}
+xpack.security.http.filter.allow: {{cfg.xpack.security.http.filter.allow}}
+xpack.security.http.filter.deny: {{cfg.xpack.security.http.filter.deny}}
 {{/if ~}}
