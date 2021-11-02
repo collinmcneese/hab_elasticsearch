@@ -6,7 +6,7 @@
 status="$(wget -qO - "{{svc.me.sys.ip}}:{{svc.me.cfg.http-port}}/_cat/health")"
 color="$(echo "${status}" | awk '{print $4}')"
 
-if [[ ${status} =~ /missing authentication token/ ]]; then
+if [[ ${status} =~ 'missing authentication token' ]]; then
   rc=0
 else
   case ${color} in
