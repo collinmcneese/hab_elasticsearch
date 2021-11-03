@@ -16,7 +16,7 @@ pkg_deps=(
   core/busybox-static
   core/glibc
   core/zlib
-  collinmcneese/openjdk11
+  collinmcneese/openjdk17
   core/wget
 )
 pkg_bin_dirs=(es/bin)
